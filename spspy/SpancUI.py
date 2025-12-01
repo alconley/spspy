@@ -12,7 +12,7 @@ from PySide6.QtWidgets import QPushButton, QTextEdit, QSpinBox
 from PySide6.QtWidgets import QFileDialog
 from PySide6.QtGui import QAction
 
-from qdarktheme import load_stylesheet, load_palette
+import qdarkstyle
 import matplotlib as mpl
 import numpy as np
 from numpy.typing import NDArray
@@ -381,6 +381,7 @@ def run_spanc_ui() :
     app = QApplication.instance()
     if not app:
         app = QApplication(sys.argv)
-        app.setStyleSheet(load_stylesheet())
+        # app.setStyleSheet(load_stylesheet())
+        app.setStyleSheet(qdarkstyle.load_stylesheet())
     window = SpancGUI()
     sys.exit(app.exec_())
